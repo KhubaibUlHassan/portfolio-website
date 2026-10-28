@@ -1,0 +1,26 @@
+[
+  {
+    "id": "bdd-001",
+    "title": "Given-When-Then: Proctored Session Timeout",
+    "type": "BDD",
+    "severity": "High",
+    "status": "Verified",
+    "details": "Given an idle proctored tab, When inactivity > 120s, Then force re-auth with audit event logged."
+  },
+  {
+    "id": "contract-001",
+    "title": "Pact V4: /evaluations mismatch",
+    "type": "Contract",
+    "severity": "Critical",
+    "status": "Blocked",
+    "details": "Consumer expects 'score' number; provider returns string -> HTTP 403 + schema diff."
+  },
+  {
+    "id": "deepeval-001",
+    "title": "DeepEval: Hallucination Guardrail",
+    "type": "AI Guardrail",
+    "severity": "High",
+    "status": "Enforced",
+    "details": "faithfulness >= 0.9, context_precision >= 0.8; below threshold -> reject with rationale."
+  }
+]

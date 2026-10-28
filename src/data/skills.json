@@ -1,0 +1,98 @@
+{
+  "sqa": [
+    {
+      "name": "Cypress",
+      "description": "Browser-level end-to-end regression suites with deterministic fixtures and CI-friendly reporting.",
+      "tags": ["E2E", "CI"]
+    },
+    {
+      "name": "Postman",
+      "description": "API exploration, collection runners, and automated request validation.",
+      "tags": ["API", "Collections"]
+    },
+    {
+      "name": "Playwright",
+      "description": "Cross-browser automation with isolated contexts and trace-driven debugging.",
+      "tags": ["E2E", "Cross-browser"]
+    },
+    {
+      "name": "Newman",
+      "description": "Headless Postman collection execution wired directly into delivery pipelines.",
+      "tags": ["CI", "API"]
+    },
+    {
+      "name": "Pact V4 (Contract Testing)",
+      "description": "Consumer-driven contract verification that blocks breaking API changes before release.",
+      "tags": ["Contracts", "Pact"]
+    },
+    {
+      "name": "DeepEval (AI Red-Teaming/Guardrails)",
+      "description": "LLM evaluation gates for faithfulness, relevance, and hallucination control.",
+      "tags": ["LLM", "Guardrails"]
+    },
+    {
+      "name": "OpenTelemetry",
+      "description": "Traces, metrics, and logs that make verification pipelines observable.",
+      "tags": ["Observability", "OTel"]
+    }
+  ],
+  "pm": [
+    {
+      "name": "JIRA",
+      "description": "Backlog shaping, sprint flow, and traceable delivery reporting.",
+      "tags": ["Agile", "Tracking"]
+    },
+    {
+      "name": "Agile/Scrum",
+      "description": "Iterative planning, refinement, and a dependable cross-functional delivery cadence.",
+      "tags": ["Scrum", "Delivery"]
+    },
+    {
+      "name": "Software Requirements Engineering (IEEE 830 SRS)",
+      "description": "Structured requirements, acceptance criteria, and end-to-end traceability.",
+      "tags": ["SRS", "Requirements"]
+    },
+    {
+      "name": "Mixpanel",
+      "description": "Funnel, retention, and event-based product analytics for decision-ready insight.",
+      "tags": ["Analytics", "Events"]
+    },
+    {
+      "name": "Product Analytics",
+      "description": "Metric trees, cohort analysis, and instrumentation tied to product outcomes.",
+      "tags": ["Metrics", "Strategy"]
+    }
+  ],
+  "eng": [
+    {
+      "name": "React",
+      "description": "Component architecture, state management, and accessible interface delivery.",
+      "tags": ["UI", "Frontend"]
+    },
+    {
+      "name": "TypeScript",
+      "description": "Typed application logic and safer integration boundaries across the stack.",
+      "tags": ["Types", "Frontend"]
+    },
+    {
+      "name": "Tailwind CSS",
+      "description": "Design-system utilities and responsive interface implementation.",
+      "tags": ["CSS", "Design"]
+    },
+    {
+      "name": "Python",
+      "description": "Automation scripts, data workflows, and verification tooling.",
+      "tags": ["Automation", "Backend"]
+    },
+    {
+      "name": "Linux/Bash",
+      "description": "Shell tooling, CI environments, and reproducible local workflows.",
+      "tags": ["CLI", "Ops"]
+    },
+    {
+      "name": "Supabase",
+      "description": "Auth, Postgres data models, and serverless application backends.",
+      "tags": ["Postgres", "Backend"]
+    }
+  ]
+}

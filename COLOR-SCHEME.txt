@@ -1,0 +1,201 @@
+PORTFOLIO COLOR SCHEME — DETAILED BRIEF (CYAN PRECISION EDITION)
+Khubaib Ul Hassan — Elite Portfolio
+Last updated: 2026-10-28
+
+================================================================================
+1. DIRECTION
+================================================================================
+
+Near-black editorial dark theme with a single electric cyan / sky accent. No light mode.
+High-contrast white typography, quiet charcoal surfaces, and cyan reserved for
+precision, system diagnostics, and interactive feedback.
+
+Design intent:
+- Premium, corporate, engineering-led appearance inspired by elite developer tooling (modern developer tooling).
+- High contrast and generous negative space.
+- One accent family only (electric cyan/sky).
+- Elevation communicated through hairline borders, not heavy shadows.
+- Motion and hover states use a soft cyan "aura" glow representing code compilation and system readiness.
+
+================================================================================
+2. CORE PALETTE
+================================================================================
+
+Token                     Hex         Where used
+------------------------- ----------- ------------------------------------------
+Base background           #050505     Page background, header base
+Warm gradient top         #0f172a     Radial glow at top center of page (slate tint)
+Panel / card surface      #0a0a0a     Cards, contact channels, content panels
+Terminal / deepest        #070707     SQA inspector terminal
+Primary text              #ffffff     Headings, name, metric values
+Base body text            #d4d4d4     Paragraphs, bullets, descriptions
+Muted text                #a1a1a1     Nav links, secondary labels
+Subtle text               #737373     Copyright, locations, metadata
+Accent — primary          #0891b2     Primary buttons, active tabs (Cyan-600)
+Accent — hover / eyebrow  #06b6d4     Section labels, hover borders (Cyan-500)
+Accent — soft             #38bdf8     Dates, issuers, small cyan labels (Sky-400)
+Deep cyan token           #164e63     CSS var --cyan-strong (reserved, Cyan-950)
+Legacy cyan token         #0284c7     CSS var --cyan + glow shadows (Sky-600)
+
+CSS variables (src/index.css):
+  --bg: #050505
+  --panel: #0a0a0a
+  --cyan: #06b6d4
+  --cyan-strong: #164e63
+
+================================================================================
+3. SURFACES & ELEVATION
+================================================================================
+
+Page background:
+  radial-gradient(1100px 700px at 50% 0%, #0f172a 0%, #050505 55%), #050505
+  A subtle cool slate halo at the top, fading into near-black.
+
+Header:
+  Background: #050505 at 80% opacity
+  Effect: backdrop-blur-xl
+  Border-bottom: white at 10% opacity (~#1d1d1d)
+
+Cards (experience, education, certifications, contact):
+  Resting surface: white at 2% over base  (~#0a0a0a)
+  Hover surface:   white at 4% over base  (~#0f0f0f)
+  Border:          white at 10%           (~#1d1d1d)
+
+Inputs:
+  Background: black at 40% opacity        (~#060606)
+  Border:     white at 10%                (~#1d1d1d)
+  Focus:      cyan-500 border + 40% ring
+
+Borders and dividers:
+  Standard border: white 10%  (~#1d1d1d)
+  Subtle divider:  white 5%   (~#0f0f0f)
+  Hover border:    cyan-500 at 50%
+  Accent border:   cyan-500 at 30-50%
+
+State surfaces:
+  Success: emerald-950/30 background, emerald-900/60 border, emerald-300 text
+  Error:   red-950/30 background,     red-900/60 border,     red-300 text
+
+================================================================================
+4. TYPOGRAPHY COLOR HIERARCHY
+================================================================================
+
+Role                    Color       Size / Weight
+----------------------- ----------- ------------------------------------------
+Hero name               #ffffff     fluid up to 104px / 900
+Section headings        #ffffff     30-36px / 700
+Role & project titles   #ffffff     24px / 600-700
+Body copy               #d4d4d4     16px / 400
+Nav / secondary         #a1a1a1     14px / 400-500
+Metadata / copyright    #737373     14px / 400
+Section eyebrows        #06b6d4     14px / 600, uppercase
+Dates / issuers         #38bdf8     14px / 600-700
+
+Typography behavior:
+  - Headings use tracking-tight.
+  - Body copy uses leading-relaxed.
+  - Eyebrows use uppercase letter-spacing (~0.18em).
+  - Font stack is currently the system sans stack (no custom typeface loaded).
+  - Terminal/code areas use a monospace stack.
+
+================================================================================
+5. ACCENT & INTERACTION STATES
+================================================================================
+
+Primary action:
+  Fill:        #0891b2 (cyan-600)
+  Text:        #ffffff
+  Border:      #06b6d4 at 50%
+  Hover fill:  #06b6d4 (cyan-500)
+  Hover glow:  0 0 30px rgba(6,182,212,0.4)
+  Hover move:  scale(1.02)
+  Duration:    500ms ease-out
+
+Secondary action:
+  Fill:        transparent
+  Text:        #e5e5e5 (neutral-200)
+  Border:      white at 15%
+  Hover border: #06b6d4 at 50%
+  Hover glow:  0 0 30px rgba(6,182,212,0.4)
+  Hover move:  scale(1.02)
+  Duration:    500ms ease-out
+
+Icon buttons (LinkedIn, Resume, menu):
+  Border:       white at 10%
+  Text:         #d4d4d4
+  Hover border: #06b6d4 at 50%
+  Hover glow:   0 0 30px rgba(6,182,212,0.4)
+  Hover move:   scale(1.02)
+
+Cards (experience, education, certifications, skills):
+  Hover border: cyan-500 at 40%
+  Hover glow:   0 0 30px rgba(6,182,212,0.15)
+  Optional lift: -translate-y-0.5
+
+Nav links:
+  Resting:      #a1a1a1
+  Hover:        #ffffff with subtle cyan glow
+  Transition:   500ms ease-out
+
+Tabs (skills, audits):
+  Resting:      #737373
+  Active:       #ffffff text, cyan-600 underline
+  Hover:        #d4d4d4 plus subtle cyan glow
+
+Focus state:
+  Ring:         cyan-500 (#06b6d4)
+  Offset:       page background (#050505)
+
+Back-to-top link:
+  Resting:      #a1a1a1
+  Hover:        #ffffff with subtle cyan glow and slight lift
+
+================================================================================
+6. CONTRAST CHECK (WCAG)
+================================================================================
+
+Pair                                Ratio      Status
+----------------------------------- ---------- --------------------------------
+White (#ffffff) on #050505          20.38:1    Excellent
+#d4d4d4 on #050505                  13.75:1    Excellent
+#a1a1a1 on #050505                   7.89:1    Good
+#737373 on #050505                   4.30:1    Slightly below AA (normal text)
+#06b6d4 on #050505                   7.42:1    AA / AAA Large
+#38bdf8 on #050505                  11.52:1    Excellent
+White on #0891b2                     4.85:1    AA
+#d4d4d4 on #0a0a0a                  13.36:1    Excellent
+#a1a1a1 on #0a0a0a                   7.66:1    Good
+#737373 on #0a0a0a                   4.18:1    Below AA (normal text)
+
+Accessibility note:
+  #737373 is used for small metadata. It is borderline / below AA for normal
+  text. If strict AA compliance is required, lift metadata to #a1a1a1.
+
+================================================================================
+7. NOTES / DESIGN AUTHENTICITY
+================================================================================
+
+- The cyan palette shifts the portfolio tone from aggressive/passionate (red) to precision engineering, systems reliability, and software quality assurance (teal/cyan enterprise aesthetic used by Microsoft, GitHub, and Linear).
+- Tailwind v4 cyan tokens (#0891b2, #06b6d4, #38bdf8) replace red tokens cleanly across all button fills, glowing aura shadows, and borders.
+- There is no light theme, maintaining high-end developer immersion.
+- System sans stack is retained for lightning-fast edge rendering.
+
+================================================================================
+8. QUICK REFERENCE
+================================================================================
+
+Background:        #050505
+Surface:           #0a0a0a
+Deeper surface:    #070707
+Text primary:      #ffffff
+Text body:         #d4d4d4
+Text muted:        #a1a1a1
+Text subtle:       #737373
+Accent primary:    #0891b2
+Accent hover:      #06b6d4
+Accent soft:       #38bdf8
+Glow:              rgba(6,182,212,0.4)
+Border:            rgba(255,255,255,0.10)
+Footer border:     rgba(255,255,255,0.10)
+
+End of brief.

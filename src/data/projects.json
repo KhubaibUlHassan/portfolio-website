@@ -1,0 +1,14 @@
+[
+  {
+    "id": "uiit-portal-audit",
+    "title": "UIIT Student Web Portal Security & Functional Audit",
+    "category": "SQA Audit & Security",
+    "summary": "Independent manual testing, boundary value analysis, session management inspection, and vulnerability documentation for the university student portal fee and data modules.",
+    "metrics": [
+      "Manual testing and boundary value analysis across fee and data modules",
+      "Session management inspection with documented vulnerability findings",
+      "Findings reported through a structured defect and risk process"
+    ],
+    "tags": ["Manual Testing", "Boundary Value Analysis", "Session Management", "Vulnerability Reporting"]
+  }
+]
