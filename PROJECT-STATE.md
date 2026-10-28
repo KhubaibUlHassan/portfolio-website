@@ -14,8 +14,8 @@ Working directory: `/home/khubaib/portfolio-elite`
 
 ## Current State
 
-- GitHub `main` is a clean, single-commit repository.
-- Current commit: `7cad0c8 refactor: purge V1 references and finalize Cloudflare deployment setup`
+- GitHub `main` has a clean history after the V1 purge.
+- Current head: run `git log -1 --oneline`.
 - No V1 portfolio files or old Vercel deployment configs remain in the repository.
 - The portfolio is deployed directly with Wrangler, not through a Cloudflare Git integration.
 - The old Vercel deployment is still live at `https://khubaibulhassan.vercel.app/` and must be deleted from the Vercel dashboard.
