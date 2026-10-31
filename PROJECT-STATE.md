@@ -1,12 +1,12 @@
 # Portfolio Project State
 
-Last updated: 2026-10-28
+Last updated: 2026-10-31
 Working directory: `/home/khubaib/portfolio-elite`
 
 ## Live URLs
 
 - Production: https://khubaibulhassan.pages.dev
-- Latest deployment: https://89b8c7b5.khubaibulhassan.pages.dev
+- Latest deployment: https://d4841f98.khubaibulhassan.pages.dev
 - Repository: https://github.com/KhubaibUlHassan/portfolio-website
 - Branch: `main`
 - Cloudflare Pages project: `khubaibulhassan`
@@ -20,6 +20,11 @@ Working directory: `/home/khubaib/portfolio-elite`
 - The portfolio is deployed directly with Wrangler, not through a Cloudflare Git integration.
 - The old Vercel deployment is still live at `https://khubaibulhassan.vercel.app/` and must be deleted from the Vercel dashboard.
 - Contact form and Resend integration were removed. Contact is now direct email, LinkedIn, GitHub, and resume links.
+- Full light/dark theme system, tokenized accent colors, and self-hosted Inter + Space Grotesk are live.
+- The hero portrait uses a framed studio panel with a theme-aware backdrop, grid, accent glow, brand badge, and a floating credential pill.
+- The latest CV (`Khubaib_SQA_CV.pdf`) is linked from the navbar, hero, contact section, and footer.
+- Browser branding uses a generated cyan "K" monogram: favicon set, apple touch icon, and web manifest.
+- Experience copy and the featured project are aligned to the CV (Arid Web Portal, Cloud Wave Innovations).
 
 ## Commands
 
@@ -74,15 +79,27 @@ There is no Resend key or inquiry-email configuration.
 ## Architecture
 
 - `src/App.tsx` mounts all page sections and GSAP ScrollSmoother.
+- `src/main.tsx` imports self-hosted font packages and applies the saved theme before render.
+- `src/index.css` — light/dark design tokens, self-hosted fonts, and component styles.
+- `src/components/ThemeToggle.jsx` + `src/hooks/useTheme.js` — persisted light/dark switch.
 - `src/components/AiAssistant.jsx` — floating AI concierge UI.
 - `functions/api/assistant.js` — production Cloudflare Function.
 - `shared/gemini-concierge.js` — prompt, validation, model fallback, request handling.
 - `vite.config.ts` — local `/api/assistant` proxy for development.
-- `src/data/projects.json` — one featured project: UIIT Student Web Portal Security & Functional Audit.
-- `src/data/certifications.json` — 6 credentials, including the two Google certificates.
+- `src/data/projects.json` — one featured project: Arid Web Portal Security & Functional Audit.
+- `src/data/certifications.json` — 6 credentials, rendered as a pinned horizontal scroll track on desktop.
 - `src/components/ContactSection.jsx` — direct email/LinkedIn/GitHub/resume contact.
 - `src/components/ContactBar.jsx` — footer links, copy email, and back-to-top.
 - `public/_headers` — CSP and security headers.
+
+## Brand & Resume Assets
+
+- `design/brand-k.png` — full-resolution source mark generated with Agnes (not served).
+- `public/assets/brand-mark.png` — 256px transparent monogram used in the hero badge.
+- `public/favicon.ico`, `public/favicon-32.png`, `public/favicon-192.png`, `public/favicon-512.png`, `public/apple-touch-icon.png` — browser/OS icons.
+- `public/site.webmanifest` — PWA icon and theme metadata.
+- `public/Khubaib_SQA_CV.pdf` — current CV served from every resume link.
+- `public/assets/khubaib-portrait.png` — transparent hero portrait.
 
 ## Content Notes
 

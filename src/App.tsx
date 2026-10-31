@@ -32,11 +32,21 @@ export default function App() {
 
       if (!prefersReduced) {
         gsap.utils.toArray<HTMLElement>('section').forEach((section) => {
-          gsap.from(section, {
-            opacity: 0,
-            duration: 0.8,
-            ease: 'power2.out',
-            scrollTrigger: { trigger: section, start: 'top 85%' },
+          const items = section.querySelectorAll<HTMLElement>('[data-reveal]')
+          if (!items.length) return
+
+          items.forEach((item) => {
+            gsap.from(item, {
+              y: 30,
+              opacity: 0,
+              duration: 0.9,
+              ease: 'power3.out',
+              scrollTrigger: {
+                trigger: item,
+                start: 'top 88%',
+                toggleActions: 'play none none none',
+              },
+            })
           })
         })
       }
@@ -44,7 +54,12 @@ export default function App() {
       return () => smoother.kill()
     }, root)
 
+    const refreshAfterFonts = () => ScrollTrigger.refresh()
+    document.fonts?.ready.then(refreshAfterFonts).catch(() => {})
+    window.addEventListener('load', refreshAfterFonts)
+
     return () => {
+      window.removeEventListener('load', refreshAfterFonts)
       ctx.revert()
       ScrollTrigger.getAll().forEach((t) => t.kill())
     }

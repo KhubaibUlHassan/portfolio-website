@@ -45,16 +45,16 @@ export default function SqaInspector() {
 
   return (
     <section id="audits" className="relative mx-auto max-w-[1200px] scroll-mt-24 px-5 py-20 sm:px-8 sm:py-28">
-      <div className="max-w-2xl">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-500">Quality engineering</p>
-        <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">Audit &amp; Defect Inspector</h2>
-        <p className="mt-4 text-base leading-relaxed text-neutral-300">
+      <div className="max-w-2xl" data-reveal>
+        <p className="eyebrow">Quality engineering</p>
+        <h2 className="section-title mt-4 text-3xl sm:text-4xl">Audit &amp; Defect Inspector</h2>
+        <p className="mt-4 text-base leading-relaxed text-ink-2">
           Deterministic verification, consumer-driven contracts, and AI guardrail assertions. No happy-path-only scripts.
         </p>
       </div>
 
-      <div className="mt-10 overflow-hidden rounded-xl border border-white/10 bg-[#070707]">
-        <div className="flex flex-wrap gap-x-5 gap-y-1 border-b border-white/10 px-4 sm:px-6" role="tablist" aria-label="Inspection modes">
+      <div className="panel-card mt-10 overflow-hidden rounded-xl" data-reveal>
+        <div className="flex flex-wrap gap-x-5 gap-y-1 border-b border-line px-4 sm:px-6" role="tablist" aria-label="Inspection modes">
           {tabs.map((t) => (
             <button
               key={t.key}
@@ -62,8 +62,8 @@ export default function SqaInspector() {
               role="tab"
               aria-selected={active === t.key}
               onClick={() => setActive(t.key)}
-              className={`min-h-12 min-w-11 cursor-pointer border-b-2 px-1 text-sm font-semibold uppercase tracking-[0.1em] transition-all duration-500 ease-out hover:shadow-[0_0_20px_rgba(6,182,212,0.2)] sm:text-base ${
-                active === t.key ? 'border-cyan-600 text-white' : 'border-transparent text-neutral-500 hover:text-neutral-300'
+              className={`min-h-12 min-w-11 cursor-pointer border-b-2 px-1 text-sm font-semibold uppercase tracking-[0.1em] transition-all duration-500 ease-out hover:shadow-[0_0_20px_var(--c-accent-glow)] sm:text-base ${
+                active === t.key ? 'border-accent text-ink' : 'border-transparent text-ink-3 hover:text-ink-2'
               }`}
             >
               {t.label}
@@ -71,11 +71,11 @@ export default function SqaInspector() {
           ))}
         </div>
 
-        <pre className="overflow-x-auto p-4 font-mono text-sm leading-relaxed text-neutral-300 sm:p-6 sm:text-base">
+        <pre className="overflow-x-auto bg-code p-4 font-mono text-sm leading-relaxed text-ink-2 sm:p-6 sm:text-base">
 {lines.map((line, i) => (
   <div key={i} className="flex gap-3 sm:gap-4">
-    <span className="w-6 shrink-0 select-none text-right text-sm text-neutral-700">{String(i + 1).padStart(2, '0')}</span>
-    <span className={line.includes('FAILED') || line.includes('MISMATCH') || line.includes('REJECT') ? 'text-red-400' : line.includes('PASS') ? 'text-emerald-400' : ''}>
+    <span className="w-6 shrink-0 select-none text-right text-sm text-ink-3/60">{String(i + 1).padStart(2, '0')}</span>
+    <span className={line.includes('FAILED') || line.includes('MISMATCH') || line.includes('REJECT') ? 'text-danger' : line.includes('PASS') ? 'text-pass' : ''}>
       {line || '\u00A0'}
     </span>
   </div>

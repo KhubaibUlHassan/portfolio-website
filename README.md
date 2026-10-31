@@ -94,5 +94,8 @@ Add or edit JSON; no component changes required.
 ## Assets
 
 - `public/assets/khubaib-portrait.png` — transparent portrait cutout used in the hero
-- `public/resume.pdf` — current CV
+- `public/assets/brand-mark.png` — transparent "K" monogram used in the hero badge
+- `design/brand-k.png` — full-resolution source for the brand mark
+- `public/favicon-*`, `public/apple-touch-icon.png`, `public/site.webmanifest` — browser and PWA icons
+- `public/Khubaib_SQA_CV.pdf` — current CV
 - `src/components/ContactSection.jsx` — email, LinkedIn, GitHub, and resume links

@@ -1,0 +1,14 @@
+{
+  "name": "Khubaib Ul Hassan — SQA & AI Portfolio",
+  "short_name": "Khubaib",
+  "description": "SQA audits, deterministic verification, and AI evaluation portfolio.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#06080b",
+  "theme_color": "#06080b",
+  "icons": [
+    { "src": "/favicon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/favicon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/favicon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

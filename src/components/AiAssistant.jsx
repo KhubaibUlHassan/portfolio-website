@@ -6,7 +6,7 @@ const INTRO =
 
 const STARTERS = [
   "What is Khubaib's SQA background?",
-  'Tell me about his UIIT Security Audit',
+  'Tell me about his Arid Security Audit',
   'How can I hire him?',
 ]
 
@@ -57,7 +57,7 @@ function StatusDot({ className = '' }) {
 function Avatar({ small = false }) {
   return (
     <span
-      className={`inline-flex shrink-0 items-center justify-center rounded-full border border-cyan-400/30 bg-gradient-to-br from-cyan-500/25 to-sky-500/10 text-cyan-300 shadow-[0_0_18px_rgba(6,182,212,0.16)] ${
+      className={`inline-flex shrink-0 items-center justify-center rounded-full border border-accent/40 bg-gradient-to-br from-accent/25 to-accent/10 text-accent-ink shadow-[0_0_18px_var(--c-accent-glow)] ${
         small ? 'h-7 w-7' : 'h-10 w-10'
       }`}
       aria-hidden="true"
@@ -201,18 +201,18 @@ export default function AiAssistant() {
         aria-label="Khubaib's AI assistant"
         aria-hidden={!open}
         inert={!open}
-        className={`fixed bottom-24 right-4 z-[85] flex h-[min(38rem,calc(100dvh-8rem))] w-[calc(100vw-2rem)] max-w-[26rem] origin-bottom flex-col overflow-hidden rounded-3xl border border-white/10 bg-neutral-950/90 shadow-2xl ring-1 ring-cyan-400/10 backdrop-blur-xl transition-[opacity,transform] duration-300 ease-out will-change-transform transform-gpu sm:right-6 ${
+        className={`fixed bottom-24 right-4 z-[85] flex h-[min(38rem,calc(100dvh-8rem))] w-[calc(100vw-2rem)] max-w-[26rem] origin-bottom flex-col overflow-hidden rounded-3xl border border-line bg-panel/90 shadow-2xl ring-1 ring-accent/15 backdrop-blur-xl transition-[opacity,transform] duration-300 ease-out will-change-transform transform-gpu sm:right-6 ${
           open ? 'pointer-events-auto translate-y-0 scale-100 opacity-100' : 'pointer-events-none translate-y-6 scale-[0.97] opacity-0'
         }`}
       >
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent" aria-hidden="true" />
-        <div className="pointer-events-none absolute -right-20 -top-24 h-56 w-56 rounded-full bg-cyan-500/10 blur-3xl" aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-ink/70 to-transparent" aria-hidden="true" />
+        <div className="pointer-events-none absolute -right-20 -top-24 h-56 w-56 rounded-full bg-accent/10 blur-3xl" aria-hidden="true" />
 
-        <header className="relative flex items-center gap-3 border-b border-white/10 bg-white/[0.025] px-4 py-3.5">
+        <header className="relative flex items-center gap-3 border-b border-line bg-panel-soft px-4 py-3.5">
           <Avatar />
           <div className="min-w-0 flex-1">
-            <p className="truncate text-sm font-semibold tracking-tight text-white">Khubaib's AI Assistant</p>
-            <p className="mt-0.5 flex items-center gap-1.5 text-[11px] font-medium tracking-[0.02em] text-neutral-400">
+            <p className="truncate text-sm font-semibold tracking-tight text-ink">Khubaib's AI Assistant</p>
+            <p className="mt-0.5 flex items-center gap-1.5 text-[11px] font-medium tracking-[0.02em] text-ink-3">
               <StatusDot />
               AI Assistant Online
             </p>
@@ -222,7 +222,7 @@ export default function AiAssistant() {
             onClick={clearChat}
             aria-label="Clear conversation"
             title="Clear conversation"
-            className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-transparent text-neutral-400 transition-all duration-300 hover:border-white/10 hover:bg-white/5 hover:text-cyan-300 active:scale-95"
+            className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-transparent text-ink-3 transition-all duration-300 hover:border-line hover:bg-panel-soft hover:text-accent-ink active:scale-95"
           >
             <TrashIcon />
           </button>
@@ -230,7 +230,7 @@ export default function AiAssistant() {
             type="button"
             onClick={close}
             aria-label="Close AI chat"
-            className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-transparent text-neutral-400 transition-all duration-300 hover:border-white/10 hover:bg-white/5 hover:text-white active:scale-95"
+            className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-transparent text-ink-3 transition-all duration-300 hover:border-line hover:bg-panel-soft hover:text-ink active:scale-95"
           >
             <CloseIcon className="h-4 w-4" />
           </button>
@@ -252,10 +252,10 @@ export default function AiAssistant() {
               <div
                 className={`max-w-[85%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed ${
                   message.role === 'user'
-                    ? 'rounded-br-md bg-cyan-600 text-white shadow-[0_8px_24px_rgba(8,145,178,0.22)]'
+                    ? 'rounded-br-md bg-accent text-white shadow-[0_8px_24px_var(--c-accent-glow)]'
                     : message.error
-                      ? 'rounded-bl-md border border-rose-400/20 bg-rose-500/[0.06] text-rose-100/90'
-                      : 'rounded-bl-md border border-white/10 bg-white/[0.045] text-neutral-200'
+                      ? 'rounded-bl-md border border-danger/30 bg-danger-soft text-danger'
+                      : 'rounded-bl-md border border-line bg-panel-soft text-ink-2'
                 }`}
               >
                 <p className="whitespace-pre-wrap break-words">{message.text}</p>
@@ -266,7 +266,7 @@ export default function AiAssistant() {
           {typing && (
             <div className="flex items-end gap-2" role="status">
               <Avatar small />
-              <div className="inline-flex items-center gap-1.5 rounded-2xl rounded-bl-md border border-white/10 bg-white/[0.045] px-4 py-3.5">
+              <div className="inline-flex items-center gap-1.5 rounded-2xl rounded-bl-md border border-line bg-panel-soft px-4 py-3.5">
                 <span className="ai-typing-dot" />
                 <span className="ai-typing-dot" style={{ animationDelay: '140ms' }} />
                 <span className="ai-typing-dot" style={{ animationDelay: '280ms' }} />
@@ -277,14 +277,14 @@ export default function AiAssistant() {
 
           {messages.length === 1 && !typing && (
             <div className="space-y-2 pt-1">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-neutral-500">Try asking</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-3">Try asking</p>
               <div className="flex flex-wrap gap-2">
                 {STARTERS.map((starter) => (
                   <button
                     key={starter}
                     type="button"
                     onClick={() => sendMessage(starter)}
-                    className="cursor-pointer rounded-full border border-cyan-500/20 bg-cyan-500/[0.06] px-3 py-2 text-left text-xs leading-relaxed text-cyan-100/90 transition-all duration-300 hover:border-cyan-400/40 hover:bg-cyan-500/10 hover:text-white active:scale-[0.98]"
+                    className="cursor-pointer rounded-full border border-accent/25 bg-accent-soft px-3 py-2 text-left text-xs leading-relaxed text-accent-ink transition-all duration-300 hover:border-accent/50 hover:bg-accent/10 hover:text-ink active:scale-[0.98]"
                   >
                     {starter}
                   </button>
@@ -294,9 +294,9 @@ export default function AiAssistant() {
           )}
         </div>
 
-        <div className="relative border-t border-white/10 bg-black/20 p-3">
+        <div className="relative border-t border-line bg-panel-soft p-3">
           <form onSubmit={handleSubmit}>
-            <div className="flex items-end gap-2 rounded-2xl border border-white/10 bg-white/[0.04] p-1.5 pl-3 transition-colors duration-300 focus-within:border-cyan-500/50 focus-within:shadow-[0_0_0_3px_rgba(6,182,212,0.08)]">
+            <div className="flex items-end gap-2 rounded-2xl border border-line bg-panel-soft p-1.5 pl-3 transition-colors duration-300 focus-within:border-accent/60 focus-within:shadow-[0_0_0_3px_var(--c-accent-soft)]">
               <textarea
                 ref={inputRef}
                 value={input}
@@ -306,19 +306,19 @@ export default function AiAssistant() {
                 maxLength={MAX_INPUT}
                 placeholder="Ask about SQA, audits, or freelance work..."
                 aria-label="Message Khubaib's AI concierge"
-                className="max-h-[104px] min-h-10 flex-1 resize-none bg-transparent py-2 text-sm leading-relaxed text-white placeholder:text-neutral-500 focus:outline-none"
+                className="max-h-[104px] min-h-10 flex-1 resize-none bg-transparent py-2 text-sm leading-relaxed text-ink placeholder:text-ink-3 focus:outline-none"
               />
               <button
                 type="submit"
                 disabled={!input.trim() || typing}
                 aria-label="Send message"
-                className="inline-flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-xl bg-cyan-600 text-white transition-all duration-300 hover:bg-cyan-500 hover:shadow-[0_0_24px_rgba(6,182,212,0.35)] active:scale-95 disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-neutral-500 disabled:shadow-none"
+                className="inline-flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-xl bg-accent text-white transition-all duration-300 hover:bg-accent-hover hover:shadow-[0_0_24px_var(--c-accent-glow)] active:scale-95 disabled:cursor-not-allowed disabled:bg-panel-soft disabled:text-ink-3 disabled:shadow-none"
               >
                 <SendIcon />
               </button>
             </div>
           </form>
-          <p className="mt-2 text-center text-[10px] leading-relaxed text-neutral-500">
+          <p className="mt-2 text-center text-[10px] leading-relaxed text-ink-3">
             AI can make mistakes. For project details, use the contact section.
           </p>
         </div>
@@ -331,14 +331,14 @@ export default function AiAssistant() {
         aria-expanded={open}
         aria-controls="ai-concierge-panel"
         aria-label={open ? 'Close AI assistant' : "Open Khubaib's AI assistant"}
-        className="group fixed bottom-5 right-4 z-[90] inline-flex min-h-12 cursor-pointer items-center gap-2.5 rounded-full border border-cyan-400/30 bg-neutral-950/90 px-4 text-sm font-semibold text-white shadow-[0_12px_40px_rgba(0,0,0,0.45),0_0_20px_rgba(6,182,212,0.3)] ring-1 ring-cyan-400/15 backdrop-blur-xl transition-[transform,box-shadow,border-color,background-color] duration-300 ease-out will-change-transform transform-gpu hover:scale-105 hover:border-cyan-400/50 hover:bg-neutral-900/95 hover:shadow-[0_12px_40px_rgba(0,0,0,0.45),0_0_35px_rgba(6,182,212,0.6)] hover:ring-cyan-400/30 active:scale-100 sm:bottom-6 sm:right-6"
+        className="group fixed bottom-5 right-4 z-[90] inline-flex min-h-12 cursor-pointer items-center gap-2.5 rounded-full border border-accent/40 bg-panel/90 px-4 text-sm font-semibold text-ink shadow-[0_12px_40px_rgba(15,23,42,0.22),0_0_20px_var(--c-accent-glow)] ring-1 ring-accent/20 backdrop-blur-xl transition-[transform,box-shadow,border-color,background-color] duration-300 ease-out will-change-transform transform-gpu hover:scale-105 hover:border-accent/60 hover:bg-panel hover:shadow-[0_12px_40px_rgba(15,23,42,0.28),0_0_35px_var(--c-accent-glow)] hover:ring-accent/30 active:scale-100 sm:bottom-6 sm:right-6"
       >
-        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-500/15 text-cyan-300 shadow-[0_0_16px_rgba(6,182,212,0.2)]">
+        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-accent/40 bg-accent-soft text-accent-ink shadow-[0_0_16px_var(--c-accent-glow)]">
           <RobotIcon className="h-4 w-4" />
         </span>
         <span>{open ? 'Close AI chat' : "Ask Khubaib's AI"}</span>
         {open ? (
-          <CloseIcon className="h-4 w-4 text-neutral-400 transition-colors duration-300 group-hover:text-white" />
+          <CloseIcon className="h-4 w-4 text-ink-3 transition-colors duration-300 group-hover:text-ink" />
         ) : (
           <StatusDot className="ml-0.5" />
         )}
