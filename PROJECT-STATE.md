@@ -6,7 +6,7 @@ Working directory: `/home/khubaib/portfolio-elite`
 ## Live URLs
 
 - Production: https://khubaibulhassan.pages.dev
-- Latest deployment: https://d4841f98.khubaibulhassan.pages.dev
+- Latest deployment: https://ebad9ee8.khubaibulhassan.pages.dev
 - Repository: https://github.com/KhubaibUlHassan/portfolio-website
 - Branch: `main`
 - Cloudflare Pages project: `khubaibulhassan`
@@ -25,6 +25,7 @@ Working directory: `/home/khubaib/portfolio-elite`
 - The latest CV (`Khubaib_SQA_CV.pdf`) is linked from the navbar, hero, contact section, and footer.
 - Browser branding uses a generated cyan "K" monogram: favicon set, apple touch icon, and web manifest.
 - Experience copy and the featured project are aligned to the CV (Arid Web Portal, Cloud Wave Innovations).
+- A WebGL fluid cursor trail follows pointer and touch input, tinted to the cyan/teal brand palette and disabled for reduced-motion users.
 
 ## Commands
 
@@ -83,6 +84,7 @@ There is no Resend key or inquiry-email configuration.
 - `src/index.css` — light/dark design tokens, self-hosted fonts, and component styles.
 - `src/components/ThemeToggle.jsx` + `src/hooks/useTheme.js` — persisted light/dark switch.
 - `src/components/AiAssistant.jsx` — floating AI concierge UI.
+- `src/components/FluidCursor.jsx` + `src/hooks/useFluidCursor.js` — WebGL fluid cursor trail, disabled for reduced-motion users.
 - `functions/api/assistant.js` — production Cloudflare Function.
 - `shared/gemini-concierge.js` — prompt, validation, model fallback, request handling.
 - `vite.config.ts` — local `/api/assistant` proxy for development.

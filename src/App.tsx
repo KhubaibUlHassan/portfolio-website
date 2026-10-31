@@ -11,6 +11,7 @@ import SqaInspector from './components/SqaInspector'
 import ContactSection from './components/ContactSection'
 import ContactBar from './components/ContactBar'
 import AiAssistant from './components/AiAssistant'
+import FluidCursor from './components/FluidCursor'
 import './App.css'
 
 export default function App() {
@@ -83,6 +84,7 @@ export default function App() {
           <ContactBar />
         </div>
       </div>
+      <FluidCursor />
       <AiAssistant />
     </div>
   )

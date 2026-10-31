@@ -273,6 +273,25 @@ img {
   background: color-mix(in srgb, var(--c-accent) 25%, transparent);
 }
 
+.fluid-cursor {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.fluid-cursor-canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fluid-cursor {
+    display: none;
+  }
+}
+
 #smooth-wrapper {
   overflow: hidden;
   position: fixed;
